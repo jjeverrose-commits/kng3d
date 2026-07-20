@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KNG Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  :root {
+    --cyber: #00e5ff;
+    --cyber-glow: rgba(0, 229, 255, 0.8);
+    --purple: #8a2eff;
+    --purple-glow: rgba(138, 46, 255, 0.8);
+    --orange: #ff7b00;
+    --orange-glow: rgba(255, 123, 0, 0.8);
+    --gold: #ffcc33;
+    --gold-glow: rgba(255, 204, 51, 0.8);
+    --text: #f5f5ff;
+    --muted: #a0a0c0;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 20% 20%, var(--cyber), transparent 40%),
+      radial-gradient(circle at 80% 30%, var(--purple), transparent 40%),
+      radial-gradient(circle at 50% 80%, var(--orange), transparent 40%),
+      radial-gradient(circle at 30% 60%, var(--gold), transparent 40%),
+      #050510;
+    background-size: 200% 200%;
+    animation: nebula 20s ease infinite;
+    color: var(--text);
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  @keyframes nebula {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+  }
+
+  header {
+    padding: 1.5rem 8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    background: rgba(5, 5, 16, 0.5);
+    border-bottom: 1px solid var(--cyber);
+  }
+
+  header a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  header a:hover {
+    color: var(--text);
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2.6rem;
+    background: linear-gradient(90deg, var(--cyber), var(--purple), var(--orange), var(--gold));
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: sweep 5s ease infinite;
+  }
+
+  @keyframes sweep {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.6rem;
+    padding: 2rem 8vw;
+  }
+
+  .product {
+    background: rgba(11, 11, 26, 0.7);
+    border-radius: 1.2rem;
+    padding: 1.6rem;
+    border: 1px solid var(--cyber);
+    box-shadow: 0 0 20px var(--purple-glow);
+    transition: 0.2s ease;
+  }
+
+  .product:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px var(--orange-glow);
+  }
+
+  .product img {
+    width: 100%;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    box-shadow:
+      0 0 20px var(--cyber-glow),
+      0 0 40px var(--purple-glow),
+      0 0 60px var(--orange-glow),
+      0 0 80px var(--gold-glow);
+  }
+
+  .price {
+    font-size: 1.2rem;
+    color: var(--cyber);
+    margin: 0.6rem 0;
+  }
+
+  .btn-buy {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    background: var(--orange);
+    color: #020208;
+    box-shadow: 0 0 20px var(--orange-glow);
+    transition: 0.2s ease;
+  }
+
+  .btn-buy:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 40px var(--gold-glow);
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div style="font-size:1.2rem; color:var(--text); letter-spacing:0.15em;">
+    KNG STORE
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#prints">Prints</a>
+    <a href="#gifts">Gifts</a>
+  </nav>
+</header>
+
+<h1>Shop Neon Prints</h1>
+
+<div class="grid">
+
+  <!-- PRODUCT 1 -->
+  <div class="product">
+    <img src="keychain.png" alt="Custom Keychain">
+    <h3>Custom Name Keychain</h3>
+    <p>Personalised neon keychains in any name or word.</p>
+    <div class="price">£3 each</div>
+    <button class="btn-buy" onclick="location.href='contact.html'">Request Print</button>
+  </div>
+
+  <!-- PRODUCT 2 -->
+  <div class="product">
+    <img src="stand.png" alt="Phone Stand">
+    <h3>Phone Stand</h3>
+    <p>Strong, stylish stand for desks or gaming setups.</p>
+    <div class="price">£6 each</div>
+    <button class="btn-buy" onclick="location.href='contact.html'">Request Print</button>
+  </div>
+
+  <!-- PRODUCT 3 -->
+  <div class="product">
+    <img src="fidget.png" alt="Fidget Toy">
+    <h3>Fidget Spinner / Fidget Toy</h3>
+    <p>Fun neon fidgets printed in your favourite colour.</p>
+    <div class="price">£4 each</div>
+    <button class="btn-buy" onclick="location.href='contact.html'">Request Print</button>
+  </div>
+
+  <!-- PRODUCT 4 -->
+  <div class="product">
+    <img src="clip.png" alt="Replacement Clip">
+    <h3>Replacement Clips</h3>
+    <p>Custom‑designed clips for broken household items.</p>
+    <div class="price">POA</div>
+    <button class="btn-buy" onclick="location.href='contact.html'">Send Measurements</button>
+  </div>
+
+</div>
+
+<footer>
+  © KNG 3D Printing — Neon Store Page  
+</footer>
+
+</body>
+</html>
